@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Arma3LauncherLib.SSQLib</name>
+    </assembly>
+    <members>
+        <member name="T:DerAtrox.Arma3LauncherLib.SSQLib.Exceptions.NetworkNotAvailableException">
+            <summary>
+            The exception that is thrown when no network connection in available.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.SSQLib.Exceptions.NetworkNotAvailableException.#ctor">
+            <summary>
+            Initializes a new instance of the NetworkNotAvailableException class.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.SSQLib.Exceptions.NetworkNotAvailableException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the NetworkNotAvailableException class with a specific error message.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.SSQLib.Exceptions.SourceServerException">
+            <summary>
+            The exception that is thrown when source server can not be reached.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.SSQLib.Exceptions.SourceServerException.#ctor">
+            <summary>
+            Initializes a new instance of the SourceServerException class.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.SSQLib.Exceptions.SourceServerException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the SourceServerException class with a specific error message.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.SSQLib.Utilities.EndPointUtils">
+            <summary>
+            Utilities for working with <see cref="T:System.Net.IPEndPoint">IPEndPoints</see>.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.SSQLib.Utilities.EndPointUtils.GetIpEndPointFromHostName(System.String,System.Int32,System.Boolean)">
+            <summary>
+            Returns an <see cref="T:System.Net.IPEndPoint">IPEndPoint</see> from a specific hostname and port.
+            </summary>
+            <param name="hostName">Hostname to trace.</param>
+            <param name="port">Port to add to the <see cref="T:System.Net.IPEndPoint">IPEndPoints</see>.</param>
+            <param name="throwIfMoreThanOneIp">Throw exception, if hostname returns more then one IP adress.</param>
+            <returns>IPEndPoint.</returns>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.SSQLib.Model.PlayerInfo">
+            <summary>
+                Stores information about a player in the server
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.PlayerInfo.Name">
+            <summary>
+                The name of the player
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.PlayerInfo.Kills">
+            <summary>
+                The amount of kills the player has (default: -9999)
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.PlayerInfo.Deaths">
+            <summary>
+                The amount of deaths the player has (default: -9999)
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.PlayerInfo.Score">
+            <summary>
+                The score of the player (default: -9999)
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.PlayerInfo.Ping">
+            <summary>
+                The ping of the player (default: -9999)
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.PlayerInfo.Rate">
+            <summary>
+                The rate(?) of the player (default: -9999)
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.PlayerInfo.Index">
+            <summary>
+                The index of the player in the server
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.PlayerInfo.Time">
+            <summary>
+                The time the player has been in the server
+            </summary>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo">
+            <summary>
+                Stores information about the Source server
+            </summary>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.DedicatedType">
+            <summary>
+                Used to describe the type of server running
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.DedicatedType.None">
+            <summary>
+                Default value
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.DedicatedType.Listen">
+            <summary>
+                Listen server (locally hosted)
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.DedicatedType.Dedicated">
+            <summary>
+                Dedicated server
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.DedicatedType.Sourcetv">
+            <summary>
+                SourceTV server
+            </summary>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.OsType">
+            <summary>
+                Used to describe the operating system running on the server
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.OsType.None">
+            <summary>
+                Default value
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.OsType.Windows">
+            <summary>
+                Windows server
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.OsType.Linux">
+            <summary>
+                Linux server
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Name">
+            <summary>
+                The name of the server
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Ip">
+            <summary>
+                The IP address of the server
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Port">
+            <summary>
+                The port the server uses
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Game">
+            <summary>
+                The game being played on the server (i.e. Team Fortress (tf))
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Version">
+            <summary>
+                The game version running on the server
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Map">
+            <summary>
+                The map currently being played on the server
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.PlayerCount">
+            <summary>
+                The current player count on the server
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.BotCount">
+            <summary>
+                The current bot count on the server
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.MaxPlayers">
+            <summary>
+                The max amount of players allowed on the server
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Password">
+            <summary>
+                Stores whether the server is passworded or not
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Vac">
+            <summary>
+                Stores whether the server is VAC protected or not
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Locked">
+            <summary>
+                Stores whether the server is locked or not
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.AppId">
+            <summary>
+                Stores the app ID of the game used by the server
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Dedicated">
+            <summary>
+                Stores the type of server running (Listen, Dedicated, SourceTV)
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Os">
+            <summary>
+                Stores the operating system of the server (Windows, Linux)
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo.Ping">
+            <summary>
+                Stores the ping to the server
+            </summary>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.SSQLib.SourceServerQuery">
+            <summary>
+                Used to retreive information from a Source server
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.SSQLib.SourceServerQuery.Server(System.String,System.Int32)">
+            <summary>
+                Pings the specified Source server to retreive information about it such as the server name, max players, current
+                number of players, etc.
+            </summary>
+            <param name="ip">The string containing the IP address or hostname of the server</param>
+            <param name="port">The port of the server</param>
+            <returns>Information about the server or throws an SSQLServerException if it could not be retreived</returns>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.SSQLib.SourceServerQuery.Server(System.Net.EndPoint)">
+            <summary>
+                Pings the specified Source server to retreive information about it such as the server name, max players, current
+                number of players, etc.
+            </summary>
+            <param name="ipEnd">The IPEndPoint object containing the IP address and port of the server</param>
+            <returns>Information about the server or throws an SSQLServerException if it could not be retreived</returns>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.SSQLib.SourceServerQuery.Players(System.String,System.Int32)">
+            <summary>
+                Retreives information about the players on a Source server
+            </summary>
+            <param name="ip">The string containing the IP address or hostname of the server</param>
+            <param name="port">The port of the server</param>
+            <returns>
+                A List of PlayerInfo or throws an SSQLServerException if the server could not be reached
+            </returns>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.SSQLib.SourceServerQuery.Players(System.Net.IPEndPoint)">
+            <summary>
+                Retreives information about the players on a Source server
+            </summary>
+            <param name="ipEnd">The IPEndPoint object storing the IP address and port of the server</param>
+            <returns>
+                A List of PlayerInfo or throws an SSQLServerException if the server could not be reached
+            </returns>
+        </member>
+    </members>
+</doc>

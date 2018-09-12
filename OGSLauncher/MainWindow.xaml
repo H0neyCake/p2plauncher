@@ -1,0 +1,445 @@
+﻿<Window x:Class="OGSLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:conv="clr-namespace:OGSLauncher.Converters"
+        xmlns:flipView="https://github.com/JohanLarsson/Gu.Wpf.FlipView"
+        Icon="Images/MAINICO.ico" MinWidth="1020" MaxWidth="525"
+        MinHeight="768"        
+        Title="OGS Launcher" Height="765" Width="1020" ResizeMode="NoResize" FontFamily="Panton" WindowStartupLocation="CenterScreen" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="False" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Window.Resources>
+        <conv:FileSizeConverter x:Key="FileSizeConverter" />
+        <conv:StatusConverter x:Key="StatusConverter" />
+        <conv:TimeSpanConverter x:Key="TimeSpanConverter" />
+        <Style TargetType="{x:Type Button}" x:Key="vkBtn">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Grid>
+                                <Image
+                                            x:Name="buttonImage"
+                                            Source="Images/vk@3x.png"
+                                            Stretch="Fill" Width="36" Height="36" />
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/vk3x.png" />
+
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/vk@3x.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="fbBtn">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Grid>
+                                <Image
+                                    x:Name="buttonImage"
+                                    Source="Images/fb3x.png"
+                                    Stretch="Fill" Width="36" Height="36" />
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/fb@3x.png" />
+
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/fb3x.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="ytBtn">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Grid>
+                                <Image
+                                    x:Name="buttonImage"
+                                    Source="Images/yt3.png"
+                                    Stretch="Fill" Width="36" Height="36" />
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/yt@3x.png" />
+
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/yt3.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="InstBtn">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Grid>
+                                <Image
+                                    x:Name="buttonImage"
+                                    Source="Images/inst3.png"
+                                    Stretch="Fill" Width="36" Height="36" />
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/yt@3x.png" />
+
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/inst3.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="tsBtn">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Grid>
+                                <Image
+                                    x:Name="buttonImage"
+                                    Source="Images/ts3.png"
+                                    Stretch="Fill" Width="36" Height="36" />
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/ts@3x.png" />
+
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/ts3.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="gdBtn">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Grid>
+                                <Image
+                                    x:Name="buttonImage"
+                                    Source="Images/gd3.png"
+                                    Stretch="Fill" Width="36" Height="36" />
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/gd@3x.png" />
+
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/gd3.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="settingBtn">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Grid>
+                                <Image
+                                    x:Name="buttonImage"
+                                    Source="Images/cog.png"
+                                    Stretch="Fill" Width="24" Height="24" />
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/setting@3x.png" />
+
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/cog.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="New1">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Grid>
+                                <Image
+                                    x:Name="buttonImage"
+                                    Source="Images/new4.png"
+                                    Stretch="Fill" Width="406" Height="240" />
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/12.png" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/new4.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="New2">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Grid>
+                                <Image
+                                    x:Name="buttonImage"
+                                    Source="Images/new3.png"
+                                    Stretch="Fill" Width="406" Height="240" />
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/13.png" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/new3.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ListBoxtemStyleNoHighlighting" TargetType="ListBoxItem">
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Grid Background="{TemplateBinding Background}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver"/>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected"/>
+                                    <VisualState x:Name="Selected"/>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused"/>
+                                    <VisualState x:Name="Unfocused"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Rectangle x:Name="fillColor" Fill="#FFBADDE9" IsHitTestVisible="False"
+				Opacity="0" RadiusY="1" RadiusX="1"/>
+                            <Rectangle x:Name="fillColor2" Fill="#FFBADDE9" IsHitTestVisible="False"
+				Opacity="0" RadiusY="1" RadiusX="1"/>
+                    <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}"
+			Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+			Margin="{TemplateBinding Padding}"/>
+                                <Rectangle x:Name="FocusVisualElement" RadiusY="1" RadiusX="1" Stroke="#FF6DBDD1"
+			StrokeThickness="1" Visibility="Collapsed"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="btnClose">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Grid>
+                                <Image
+                                    x:Name="buttonImage"
+                                    Source="Images/combined-shape@3x.png"
+                                    Stretch="Fill" Width="9.3" Height="8.9" />
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/close3x.png" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/combined-shape@3x.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="btnMinimize">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Grid>
+                                <Image
+                                    x:Name="buttonImage"
+                                    Source="Images/min3x.png"
+                                    Stretch="Fill" Width="9.3" Height="8.9" />
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/min3x_onmouse.png" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="buttonImage" Property="Source" Value="Images/min3x.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="Images/bg@3x.png"/>
+    </Window.Background>
+    <Grid x:Name="GridTest">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="739" />
+        </Grid.RowDefinitions>
+        <Button x:Name="btnClose" Style="{StaticResource btnClose}" Margin="993,13,14,713" RenderTransformOrigin="0.567,0.409" Click="btnClose_Click" Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Height="13">
+            <Image Source="Images/combined-shape@3x.png" Stretch="Fill" IsEnabled="False" Width="9.3" Height="8.9" />
+            
+        </Button>
+
+        <Button x:Name="PlayBtn" VerticalAlignment="Top" Height="46" Margin="804,616,77,0" Content="ИГРАТЬ" Foreground="White" FontSize="16" Click="PlayBtn_Click" BorderBrush="#FF3BB1FD" Background="#FF3BB1FD" Cursor="Hand" Width="140.2">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border x:Name="border1" CornerRadius="4"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}" Background="#FF3BB1FD"/>
+                        <ContentPresenter   Cursor="{TemplateBinding Cursor}" Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border1" Value="{StaticResource Button.MouseOver.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border1" Value="{StaticResource Button.MouseOver.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="border1" Value="{StaticResource Button.Pressed.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border1" Value="{StaticResource Button.Pressed.Border}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border1" Value="{StaticResource Button.Disabled.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="border1" Value="{StaticResource Button.Disabled.Border}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <ListBox x:Name="progressList" ItemContainerStyle="{StaticResource ListBoxtemStyleNoHighlighting}" HorizontalAlignment="Left" Height="82" Margin="121,595,0,0" VerticalAlignment="Top" Width="671" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                        <Grid Height="78" Width="657">
+                            <ProgressBar x:Name="pbMain" Maximum="100"  Value="{Binding Percentage}" Height="20" BorderBrush="{x:Null}" Background="#19FFFFFF" Foreground="#FF4AAB5F" Margin="17,18,0,40" ValueChanged="pbMain_ValueChanged"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="19,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="18" Foreground="White" FontFamily="Open Sans" FontSize="10" TextOptions.TextHintingMode="Auto"><Run Text="Загрузка обновлений сервера"/><Run Text=":"/></TextBlock>
+                            <TextBlock Text="{Binding Status, Converter={StaticResource StatusConverter}}" HorizontalAlignment="Left" Margin="172,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="18" Foreground="White" FontFamily="Open Sans" FontSize="10" TextOptions.TextHintingMode="Auto"/>
+                            <TextBlock Text="{Binding Percentage}" HorizontalAlignment="Left" Margin="361,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="21" Height="14" Foreground="White" FontFamily="Open Sans" TextOptions.TextHintingMode="Auto" FontSize="10"/>
+                            <TextBlock HorizontalAlignment="Center" Margin="305,21,292,43" TextWrapping="Wrap" VerticalAlignment="Center" Width="60" Height="14" Foreground="White" FontFamily="Open Sans" TextOptions.TextHintingMode="Auto" RenderTransformOrigin="0.475,1.179" FontSize="10"><Run Text="Загружено"/><Run Text=":"/></TextBlock>
+                            <TextBlock HorizontalAlignment="Center" Margin="380,21,265,43" TextWrapping="Wrap" VerticalAlignment="Center" Width="12" Height="14" Foreground="White" FontFamily="Open Sans" TextOptions.TextHintingMode="Auto" RenderTransformOrigin="0.475,1.179" FontSize="10"><Run Text="%"/><LineBreak/><Run/></TextBlock>
+                        </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="menuStartDownload" Header="Start" Click="menuStartDownload_Click" />
+                    <MenuItem x:Name="menuPauseDownload" Header="Pause" Click="menuPauseDownload_Click" />
+                    <MenuItem x:Name="menuStopDownload" Header="Stop" Click="menuStopDownload_Click" />
+                    <Separator />
+                    <MenuItem x:Name="menuDeleteTorrent" Header="Torrent removal" Click="menuDeleteTorrent_Click" />
+                    <MenuItem x:Name="menuDeleteTorrentAndFile" Header="Remove torrents and download files" Click="menuDeleteTorrentAndFile_Click" />
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
+
+        <Button x:Name="btnMinimize" Style="{StaticResource btnMinimize}" Margin="974,15,33,714" RenderTransformOrigin="0.567,0.409" Click="btnMinimize_Click" Width="13">
+            <Image Source="Images/min3x.png" Stretch="Fill" IsEnabled="False" Width="9.3" Height="8.9" />
+
+        </Button>
+        <Image HorizontalAlignment="Left" Height="48" Margin="16,30,0,0" VerticalAlignment="Top" Width="213" Source="Images/optimalife@3x.png"/>
+        <TextBlock HorizontalAlignment="Left" Margin="128,155,0,0" TextWrapping="Wrap" Text="Последние новости &quot;Оптимы&quot;" VerticalAlignment="Top" Height="29" Width="289" Foreground="White" FontFamily="Open Sans" FontSize="18"/>
+        <Separator HorizontalAlignment="Left" Height="26" Margin="114,513,0,0" VerticalAlignment="Top" Width="876" Background="#3FFFFFFF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="463,557,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="171" Foreground="White" FontFamily="Open Sans" FontSize="18" TextAlignment="Center"><Run Text="Центр "/><Run Text="обновлений"/></TextBlock>
+
+        <Button x:Name="New1" Style="{StaticResource New1}" HorizontalAlignment="Left" Margin="128,204,0,0" VerticalAlignment="Top" Width="406" Height="240" Cursor="Hand">
+        </Button>
+        <Button x:Name="New2"  Style="{StaticResource New2}"  HorizontalAlignment="Left" Margin="554,204,0,0" VerticalAlignment="Top" Width="406" Height="240" Cursor="Hand">
+         </Button>
+        <Button x:Name="btnVK"  Style="{StaticResource vkBtn}" Margin="0,117,953,582" RenderTransformOrigin="0.567,0.409" Click="imgBtn1_Click" Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Image Source="Images/vk@3x.png" Stretch="Fill" IsEnabled="False" Width="36" Height="36" />
+          
+        </Button>
+        <Button x:Name="btnFb" Style="{StaticResource fbBtn}"  Margin="0,173,953,526" RenderTransformOrigin="0.567,0.409" Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="btnFb_Click">
+            
+            <Image Source="Images/fb3x.png" Stretch="Fill" IsEnabled="False" Width="36" Height="36" />
+        </Button>
+        <Button x:Name="ytBtn" Style="{StaticResource ytBtn}" Margin="0,229,953,470" RenderTransformOrigin="0.567,0.409" Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="ytBtn_Click">
+           
+            <Image Source="Images/yt3.png" Stretch="Fill" IsEnabled="False" Width="36" Height="36" />
+        </Button>
+        <Button x:Name="InstBtn" Style="{StaticResource InstBtn}" Margin="0,285,953,414" RenderTransformOrigin="0.567,0.409"  Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="InstBtn_Click">
+           
+            <Image Source="Images/inst3.png" Stretch="Fill" IsEnabled="False" Width="36" Height="36" />
+        </Button>
+        <Button x:Name="tsBtn" Style="{StaticResource tsBtn}" Margin="0,341,953,358" RenderTransformOrigin="0.567,0.409"  Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="tsBtn_Click">
+            
+            <Image Source="Images/ts3.png" Stretch="Fill" IsEnabled="False" Width="36" Height="36" />
+        </Button>
+        <Button x:Name="gdBtn" Style="{StaticResource gdBtn}" Margin="0,397,953,302" RenderTransformOrigin="0.567,0.409"  Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="gdBtn_Click">
+           <Image Source="Images/gd3.png" Stretch="Fill" IsEnabled="False" Width="36" Height="36" />
+        </Button>
+        <Button x:Name="settingBtn" Style="{StaticResource settingBtn}" Margin="0,719,953,-8" RenderTransformOrigin="0.567,0.409" Foreground="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" Click="settingBtn_Click">
+            <Image Source="Images/cog.png" Stretch="Fill" IsEnabled="False" Width="24" Height="24" />
+        </Button>      
+    </Grid>
+</Window>

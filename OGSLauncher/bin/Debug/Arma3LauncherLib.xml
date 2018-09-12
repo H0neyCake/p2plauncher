@@ -1,0 +1,400 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Arma3LauncherLib</name>
+    </assembly>
+    <members>
+        <member name="T:DerAtrox.Arma3LauncherLib.Exceptions.MissionUpdateException">
+            <summary>
+            The exception that is thrown when a mission update fails.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Exceptions.MissionUpdateException.#ctor">
+            <summary>
+            Initializes a new instance of the MissionUpdateException class.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Exceptions.MissionUpdateException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the MissionUpdateException class with a specific error message.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.Exceptions.ArmaNotFoundException">
+            <summary>
+            The exception that is thrown when Arma 3 could not be found.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Exceptions.ArmaNotFoundException.#ctor">
+            <summary>
+            Initializes a new instance of the ArmaNotFoundException class.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Exceptions.ArmaNotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the ArmaNotFoundException class with a specific error message.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.Exceptions.ArmaRunningException">
+            <summary>
+            The exception that is thrown when Arma 3 is already runnning.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Exceptions.ArmaRunningException.#ctor">
+            <summary>
+            Initializes a new instance of the ArmaRunningException class.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Exceptions.ArmaRunningException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the ArmaRunningException class with a specific error message.
+            </summary>
+            <param name="message">Error message.</param>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.Model.ArmaLauncher">
+            <summary>
+            Provides a collection of methods to use with a Arma launcher.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaLauncher.Connect(System.String,DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings,System.Boolean,System.String)">
+            <summary>
+            Starts Arma 3 with specific settings.
+            </summary>
+            <param name="arma3StartPath">Path of Arma 3 runable (e.g. path to arma3battleeye.exe)</param>
+            <param name="startSettings">Start parameters to use.</param>
+            <param name="checkForRunningTask">Throw <see cref="T:DerAtrox.Arma3LauncherLib.Exceptions.ArmaRunningException">exception</see>, if Arma 3 is already running.</param>
+            <param name="arma3TaskName">Custom arma 3 task name.</param>
+            <exception cref="T:DerAtrox.Arma3LauncherLib.Exceptions.ArmaRunningException">Is thrown, if checkForRunningTask is true and Arma 3 is running.</exception>
+            <exception cref="T:DerAtrox.Arma3LauncherLib.Exceptions.ArmaNotFoundException">Is thrown, if arma3StartPath doesn't exists.</exception>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaLauncher.Connect(System.String,DerAtrox.Arma3LauncherLib.Model.ArmaServer,DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings,System.Boolean,System.String)">
+            <summary>
+            Starts Arma 3 with specific settings.
+            </summary>
+            <param name="server">Arma 3 server to connect to.</param>
+            <param name="arma3StartPath">Path of Arma 3 runable (e.g. path to arma3battleeye.exe)</param>
+            <param name="startSettings">Start parameters to use.</param>
+            <param name="checkForRunningTask">Throw <see cref="T:DerAtrox.Arma3LauncherLib.Exceptions.ArmaRunningException">exception</see>, if Arma 3 is already running.</param>
+            <param name="arma3TaskName">Custom arma 3 task name.</param>
+            <exception cref="T:DerAtrox.Arma3LauncherLib.Exceptions.ArmaRunningException">Is thrown, if checkForRunningTask is true and Arma 3 is running.</exception>
+            <exception cref="T:DerAtrox.Arma3LauncherLib.Exceptions.ArmaNotFoundException">Is thrown, if arma3StartPath doesn't exists.</exception>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.Model.ArmaMission">
+            <summary>
+            Provides methods for updating and managing different mission files.
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.Model.ArmaMission.Status">
+            <summary>
+            Current update status, uses by <see cref="M:DerAtrox.Arma3LauncherLib.Model.ArmaMission.UpdateMission(System.Boolean,System.Boolean)"/> and <see cref="M:DerAtrox.Arma3LauncherLib.Model.ArmaMission.UpdateMissionAsync(System.Boolean,System.Boolean)"/>.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaMission.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initialzes a new Arma mission object.
+            </summary>
+            <param name="missionFileName">File name of mission file with file extension.</param>
+            <param name="missionFolder">Destination folder of mission file.</param>
+            <param name="tempFolder">Working directory for downloading and extracting.</param>
+            <param name="hashFileUrl">Url of text file containing the latest hash.</param>
+            <param name="missionUrl">Download url of the mission file.</param>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaMission.CheckUpdate(System.String)">
+            <summary>
+            Checks mission file for updates.
+            </summary>
+            <param name="currentHash">Hash of currently used mission file.</param>
+            <returns>Returns if the mission file is up to date.</returns>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaMission.CheckUpdateAsync(System.String)">
+            <summary>
+            Checks mission file for updates.
+            </summary>
+            <param name="currentHash">Hash of currently used mission file.</param>
+            <returns>Returns if the mission file is up to date.</returns>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaMission.UpdateMission(System.Boolean,System.Boolean)">
+            <summary>
+            Downloads and if necessary extracts and hashs the mission file. Only supports .zip compression or no compression at all.
+            </summary>
+            <param name="disableHashing">Disables generating a new hash.</param>
+            <param name="hashCompressedFile">Hashs the downloaded archive instead of the extracted mission file.</param>
+            <returns>New hash of mission or "downloaded" if disableHasing is set to true.</returns>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaMission.UpdateMissionAsync(System.Boolean,System.Boolean)">
+            <summary>
+            Downloads and if necessary extracts and hashs the mission file. Only supports .zip compression or no compression at all.
+            </summary>
+            <param name="disableHashing">Disables generating a new hash.</param>
+            <param name="hashCompressedFile">Hashs the downloaded archive instead of the extracted mission file.</param>
+            <returns>New hash of mission or "downloaded" if disableHasing is set to true.</returns>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings">
+            <summary>
+            Collection of Arma 3 start settings.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings.NoSplash">
+            <summary>
+            Use -nosplash start parameter to skip something.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings.NoPause">
+            <summary>
+            Use -nopause start parameter to skip something.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings.ShowScriptErrors">
+            <summary>
+            Use -showscripterrors start parameter to display script errors.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings.Windowed">
+            <summary>
+            Use -windowed start parameter to start Arma in windowed mode.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings.MaxMemory">
+            <summary>
+            Use -maxMem=x start parameter to specify max ram. To disable set it lesser 0.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings.MaxVideoMemory">
+            <summary>
+            Use -maxVRam=x start parameter to specify max video memory. To disable set it lesser 0.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings.OtherArgs">
+            <summary>
+            Use additional start parameters.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings.Mods">
+            <summary>
+            Use additional mods. Supports @-notation or full path.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaStartSettings.Profile">
+            <summary>
+            Use -profile=x start parameter to specify a Arma profile.
+            </summary>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.Model.ArmaServer">
+            <summary>
+            Provides a collection of methods to use with a Arma server.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaServer.#ctor(System.Net.IPEndPoint,System.Int32,System.String)">
+            <summary>
+            Initialzes a new Arma server using an <see cref="T:System.Net.IPEndPoint">IPEndPoint.</see>
+            </summary>
+            <param name="ipEndPointSteam">IPEndPoint of Arma server with steam querry port (usually gameport + 1).</param>
+            <param name="gameport">Gameport of Arma server.</param>
+            <param name="password">Password of Arma server (default: "")</param>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaServer.#ctor(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Initialzes a new Arma server using an <see cref="T:System.Net.IPEndPoint">IPEndPoint.</see>
+            </summary>
+            <param name="host">IP or hostname of Arma server.</param>
+            <param name="gameport">Gameport of Arma server.</param>
+            <param name="steamport">Steam query port (usually gameport + 1) of Arma server.</param>
+            <param name="password">Password of Arma server (default: "")</param>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaServer.ServerAdress">
+            <summary>
+            Gets or sets the adress of the Arma server.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaServer.GamePort">
+            <summary>
+            Gets or sets the game port of the Arma server.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaServer.SteamPort">
+            <summary>
+            Gets or sets the steam query port of the Arma server.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.ArmaServer.Password">
+            <summary>
+            Gets or sets the server password to use.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaServer.GetServerInfo">
+            <summary>
+            Fetches the server info of the provided server.
+            </summary>
+            <returns><see cref="T:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo">Server info</see> of the provided server.</returns>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaServer.GetServerInfoAsync">
+            <summary>
+            Fetches the server info of the provided server asynchronously.
+            </summary>
+            <returns><see cref="T:DerAtrox.Arma3LauncherLib.SSQLib.Model.ServerInfo">Server info</see> of the provided server.</returns>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaServer.GetPlayerList">
+            <summary>
+            Fetches the connected players on the provided server.
+            </summary>
+            <returns>Array with multiple <see cref="T:DerAtrox.Arma3LauncherLib.SSQLib.Model.PlayerInfo">player infos</see>.</returns>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.ArmaServer.GetPlayerListAsync">
+            <summary>
+            Fetches the connected players on the provided server asynchronously.
+            </summary>
+            <returns>Array with multiple <see cref="T:DerAtrox.Arma3LauncherLib.SSQLib.Model.PlayerInfo">player infos</see>.</returns>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.Model.UpdateStatus">
+            <summary>
+            Update status returned by mission and mod file updater StatusChangedEvent. 
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.#ctor(DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState,System.Single)">
+            <summary>
+            Initialzes a new update status.
+            </summary>
+            <param name="state">New <see cref="T:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState"/>.</param>
+            <param name="percentage">New percentage as float.</param>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.#ctor(DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState)">
+            <summary>
+            Initialzes a new update status.
+            </summary>
+            <param name="state">New <see cref="T:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState"/>.</param>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.#ctor(System.Int32)">
+            <summary>
+            Initialzes a new update status.
+            </summary>
+            <param name="percentage">New percentage as float.</param>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.#ctor">
+            <summary>
+            Initialzes a new update status with default values.
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateStatusChanged">
+            <summary>
+            Occurs when a new status is set.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.SetStatus(DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState,System.Single)">
+            <summary>
+            Sets new status.
+            </summary>
+            <param name="state">State of status.</param>
+            <param name="percentage">Percentage of status.</param>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.SetStatus(DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState)">
+            <summary>
+            Sets new status.
+            </summary>
+            <param name="state">State of status.</param>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.SetStatus(System.Single)">
+            <summary>
+            Sets new status.
+            </summary>
+            <param name="percentage">Percentage of status.</param>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.State">
+            <summary>
+            Returns the current status text.
+            </summary>
+        </member>
+        <member name="P:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.Percentage">
+            <summary>
+            Returns the current percentage of the operation.
+            </summary>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState">
+            <summary>
+            Enum containing all update states.
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState.Checking">
+            <summary>
+            Update state, when checking for update.
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState.Downloading">
+            <summary>
+            Update state, when downloading update.
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState.Extracting">
+            <summary>
+            Update state, when extracting update.
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState.Copying">
+            <summary>
+            Update state, when copying update to destination directory.
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState.Cleaning">
+            <summary>
+            Update state, when cleaing up old files.
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState.Hashing">
+            <summary>
+            Update state, when generating file hash of downloaded file.
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState.Completed">
+            <summary>
+            Update state, when completed the Update.
+            </summary>
+        </member>
+        <member name="F:DerAtrox.Arma3LauncherLib.Model.UpdateStatus.UpdateState.None">
+            <summary>
+            Update state, when not defined.
+            </summary>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.Utilities.ArmaUtils">
+            <summary>
+            Utilities for working with <see cref="T:DerAtrox.Arma3LauncherLib.Model.ArmaLauncher">ArmaLauncher</see>.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Utilities.ArmaUtils.GetArma3Path">
+            <summary>
+            Tries to find the Arma 3 directory in the registry.
+            </summary>
+            <returns>Arma 3 directory.</returns>
+            <exception cref="T:DerAtrox.Arma3LauncherLib.Exceptions.ArmaNotFoundException">Is thrown, when Arma 3 could not be found.</exception>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.Utilities.GenericUtils">
+            <summary>
+            Generic utilites.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Utilities.GenericUtils.GetMd5FileHash(System.String)">
+            <summary>
+            Generates a MD5 hash of the given file.
+            </summary>
+            <param name="fileName">File to hash.</param>
+            <returns>Hash value of file.</returns>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Utilities.GenericUtils.GetMd5StringHash(System.String)">
+            <summary>
+            Generates a MD5 hash of the text.
+            </summary>
+            <param name="textToHash">Text to hash.</param>
+            <returns>Hash value of text.</returns>
+        </member>
+        <member name="T:DerAtrox.Arma3LauncherLib.Utilities.ProfileUtils">
+            <summary>
+            Utilities for Arma 3 profiles.
+            </summary>
+        </member>
+        <member name="M:DerAtrox.Arma3LauncherLib.Utilities.ProfileUtils.GetProfiles">
+            <summary>
+            Returns a list of all Arma 3 profiles including the current windows username.
+            </summary>
+            <returns>List of all Arma 3 profiles.</returns>
+        </member>
+    </members>
+</doc>

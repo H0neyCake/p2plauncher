@@ -1,0 +1,11 @@
+C:\Users\Dmitry\Desktop\DaramTorrent\MonoTorrent\bin\Debug\MonoTorrent.dll
+C:\Users\Dmitry\Desktop\DaramTorrent\MonoTorrent\bin\Debug\MonoTorrent.pdb
+C:\Users\Dmitry\Desktop\DaramTorrent\MonoTorrent\obj\Debug\MonoTorrent.csproj.CoreCompileInputs.cache
+C:\Users\Dmitry\Desktop\DaramTorrent\MonoTorrent\obj\Debug\MonoTorrent.dll
+C:\Users\Dmitry\Desktop\DaramTorrent\MonoTorrent\obj\Debug\MonoTorrent.pdb
+C:\Users\Dmitry\Desktop\OGSLauncher\MonoTorrent\bin\Debug\MonoTorrent.dll
+C:\Users\Dmitry\Desktop\OGSLauncher\MonoTorrent\bin\Debug\MonoTorrent.pdb
+C:\Users\Dmitry\Desktop\OGSLauncher\MonoTorrent\obj\Debug\MonoTorrent.csproj.CoreCompileInputs.cache
+C:\Users\Dmitry\Desktop\OGSLauncher\MonoTorrent\obj\Debug\MonoTorrent.dll
+C:\Users\Dmitry\Desktop\OGSLauncher\MonoTorrent\obj\Debug\MonoTorrent.pdb
+C:\Users\Dmitry\Desktop\OGSLauncher\MonoTorrent\obj\Debug\MonoTorrent.csprojResolveAssemblyReference.cache

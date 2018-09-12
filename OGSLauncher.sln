@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OGSLauncher", "OGSLauncher\OGSLauncher.csproj", "{EAA707BF-FBF1-4CAE-9B5D-5650524B167B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTorrent", "MonoTorrent\MonoTorrent.csproj", "{E3F4ECFE-77DF-4AD1-AA71-9D583EF89BFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Stats|Any CPU = Stats|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAA707BF-FBF1-4CAE-9B5D-5650524B167B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA707BF-FBF1-4CAE-9B5D-5650524B167B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA707BF-FBF1-4CAE-9B5D-5650524B167B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA707BF-FBF1-4CAE-9B5D-5650524B167B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA707BF-FBF1-4CAE-9B5D-5650524B167B}.Stats|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA707BF-FBF1-4CAE-9B5D-5650524B167B}.Stats|Any CPU.Build.0 = Release|Any CPU
+		{E3F4ECFE-77DF-4AD1-AA71-9D583EF89BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3F4ECFE-77DF-4AD1-AA71-9D583EF89BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3F4ECFE-77DF-4AD1-AA71-9D583EF89BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F4ECFE-77DF-4AD1-AA71-9D583EF89BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3F4ECFE-77DF-4AD1-AA71-9D583EF89BFC}.Stats|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F4ECFE-77DF-4AD1-AA71-9D583EF89BFC}.Stats|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3778FA9-1D7D-4A65-8E4C-9CD124E59CE7}
+	EndGlobalSection
+EndGlobal
