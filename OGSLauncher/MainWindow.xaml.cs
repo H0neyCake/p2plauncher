@@ -174,7 +174,7 @@ namespace OGSLauncher
 	    private static void DownloadTorrent()
 	    {
 	        WebClient webClient = new WebClient();
-	        Uri uri = new Uri("http://95.213.182.75/p2p_launcher/torrents/Test.torrent");
+	        Uri uri = new Uri();
 	        webClient.DownloadFileAsync(uri, "Test.torrent");
 	    }
 
@@ -386,32 +386,32 @@ namespace OGSLauncher
 
         private void imgBtn1_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://vk.com/optimaaltislife");
+            Process.Start("");
         }
 
         private void btnFb_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://www.facebook.com/groups/1815747982008994/");
+            Process.Start("");
         }
 
         private void ytBtn_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://www.youtube.com/c/OptimaLifeOfficial");
+            Process.Start("");
         }
 
         private void InstBtn_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://www.instagram.com/optima.gaming.studio/");
+            Process.Start();
         }
 
         private void tsBtn_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("ts3server://ts.optimagaming.ru");
+            Process.Start("");
         }
 
         private void gdBtn_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://drive.google.com/open?id=1kRh_zBMoPIlwcqjvzyAkt6rxNB9B6APN");
+            Process.Start();
         }
 
         private void settingBtn_Click(object sender, RoutedEventArgs e)
