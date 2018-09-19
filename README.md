@@ -15,4 +15,6 @@ All GUI writen on XAML.
 * Library for arma 3 launching (optional).
 
 ### **How to create private torrent tracker:**
-[Link](https://www.google.com.ua)
+[Link](http://bootstrike.com/Articles/CreateTorrent/)
+### **How to create Setup.exe file in Visual Studio 2017:**
+[Link](https://www.youtube.com/watch?v=SeAhp96ty18)
