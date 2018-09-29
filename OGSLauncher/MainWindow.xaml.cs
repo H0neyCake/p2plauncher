@@ -341,7 +341,7 @@ namespace OGSLauncher
 
         #endregion
 
-        #region Left Buttons
+        #region Left side Buttons
 
         private void imgBtn1_Click(object sender, RoutedEventArgs e)
         {
