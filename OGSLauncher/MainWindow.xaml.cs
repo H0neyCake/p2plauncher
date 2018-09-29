@@ -36,7 +36,7 @@ namespace OGSLauncher
 {
    public partial class MainWindow
     {
-        #region Varibles
+        #region Fields and Props
 
 	    ClientEngine clientEngine;
 	    Thread statusRefresher;
