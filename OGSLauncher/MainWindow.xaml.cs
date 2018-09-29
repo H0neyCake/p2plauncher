@@ -34,48 +34,7 @@ using Path = System.IO.Path;
 
 namespace OGSLauncher
 {
-    #region Commented
-
-   /* private void toolButtonAddTorrentFile_Click(object sender, RoutedEventArgs e)
-    {
-        OpenFileDialog dialog = new OpenFileDialog();
-        dialog.Title = "Open Torrent";
-        dialog.Filter = "Torrent files(*.torrent)|*.torrent|All files(*.*)|*.*";
-
-        if (dialog.ShowDialog().GetValueOrDefault(false))
-        {
-            Torrent torrent = Torrent.Load(dialog.FileName);
-            if (AddTorrent(torrent))
-            {
-                try
-                {
-                    File.Copy(dialog.FileName, TorrentFileDownloadPath + System.IO.Path.GetFileName(dialog.FileName));
-                }
-                catch { }
-            }
-        }
-    }
-
-    private bool AddTorrent(Torrent torrent)
-    {
-        TorrentManager torrentManager = new TorrentManager(torrent, Settings.Default.DownloadPath, new TorrentSettings());
-
-        FileSelectorWindow window = new FileSelectorWindow(torrentManager);
-        if (!window.ShowDialog().GetValueOrDefault(false))
-            return false;
-
-        torrentManager.ChangePicker(new PriorityPicker(new StandardPicker()));
-        downloadingTorrents.Add(new Downloading(torrentManager));
-
-        clientEngine.Register(torrentManager);
-        torrentManager.Start();
-
-        return true;
-    }*/
-
-    #endregion
-
-    public partial class MainWindow
+   public partial class MainWindow
     {
         #region Varibles
 
